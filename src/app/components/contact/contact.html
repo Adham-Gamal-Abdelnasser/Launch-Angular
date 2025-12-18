@@ -1,0 +1,9 @@
+<section class="mt-5 py-40 h-screen bg-gray-2">
+    <div class="w-3/4 mx-auto">
+        <form>
+            @for (input of inputsData; track input.id) {
+                <app-field [inputData]="input"></app-field>
+            }
+        </form>
+    </div>
+</section>

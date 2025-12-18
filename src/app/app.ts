@@ -3,10 +3,11 @@ import { Hero } from "./components/hero/hero";
 import { Navbar } from "./components/navbar/navbar";
 import { About } from "./components/about/about";
 import { Footer } from "./components/footer/footer";
+import { Contact } from "./components/contact/contact";
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, Navbar, About, Footer],
+  imports: [Hero, Navbar, About, Footer, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
