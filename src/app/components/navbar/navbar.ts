@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { LucideAngularModule, HouseIcon, InfoIcon, ImagesIcon, MenuIcon, XIcon, PhoneIcon, LucideIconData } from 'lucide-angular';
 import { Inavigation } from '../../interfaces/inavigation';
 
@@ -43,4 +43,15 @@ export class Navbar {
     this.navHeight = 0;
     this.isNavOpen = false;
   }
+  //todo make navbar shrink on scroll
+  //todo catch "nav" element
+  @ViewChild('theWholeNav') theWholeNav!:ElementRef;
+  @HostListener('window:scroll') makeNavbarShrinkOnScroll(): void {
+    if(scrollY > 0){
+      this.theWholeNav.nativeElement.classList.replace("py-4", "py-2");
+    }else {
+      this.theWholeNav.nativeElement.classList.replace("py-2", "py-4");
+    }
+  }
+  
 }
