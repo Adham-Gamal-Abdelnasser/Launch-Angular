@@ -1,8 +1,18 @@
-<nav class="relative top-0 start-0 end-0 bg-gray-1 flex justify-around items-center py-4 text-zinc-200 font-main">
+<nav class="relative top-0 start-0 end-0 bg-neutral-700 flex justify-around items-center py-4 text-zinc-200 font-main">
     <h2 class="text-3xl">Launch<span class="text-blue-600">A</span></h2>
-    <ul class="flex gap-5">
-        <li><a class="" href="#">Home</a></li>
-        <li><a class="" href="#">About</a></li>
-        <li><a class="" href="#">Contact</a></li>
+    <ul class="hidden md:flex gap-8">
+        @for (nav of navLinks; track nav.id) {
+            <li><a class="flex items-center gap-1" href="#"><lucide-angular [img]="nav.icon" class="my-icon"></lucide-angular> {{nav.name}}</a></li>
+        }
     </ul>
+    @if(isNavOpen){
+        <lucide-angular #closeIcon (click)="toggleNav()" [img]="close" class="my-icon cursor-pointer md:hidden"></lucide-angular>
+    }@else{
+        <lucide-angular #barsIcon (click)="toggleNav()" [img]="bars" class="my-icon cursor-pointer md:hidden"></lucide-angular>
+    }
 </nav>
+<ul #togglableNavbar [style.height.px]="isNavOpen ? navHeight : '0'" class="mob-navs  flex flex-col overflow-hidden items-center gap-4 bg-gray-2 border-4 border-blue-600 text-zinc-200 font-main md:hidden">
+    @for (nav of navLinks; track nav.id) {
+        <li [class]="{'pt-5': $first , 'pb-5': $last}"><a (click)="closeNav()" class="my-0.5 flex items-center gap-1" href="#"><lucide-angular [img]="nav.icon" class="my-icon"></lucide-angular> {{nav.name}}</a></li>
+    }
+</ul>
