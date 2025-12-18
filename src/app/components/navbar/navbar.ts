@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { LucideAngularModule, HouseIcon, InfoIcon, ImagesIcon, MenuIcon, XIcon, PhoneIcon } from 'lucide-angular';
+import { LucideAngularModule, HouseIcon, InfoIcon, ImagesIcon, MenuIcon, XIcon, PhoneIcon, LucideIconData } from 'lucide-angular';
 import { Inavigation } from '../../interfaces/inavigation';
 
 @Component({
@@ -10,12 +10,12 @@ import { Inavigation } from '../../interfaces/inavigation';
 })
 export class Navbar {
   //todo declare icons
-  readonly home = HouseIcon; 
-  readonly info = InfoIcon
-  readonly gallrey = ImagesIcon
-  readonly contact = PhoneIcon
-  readonly bars = MenuIcon
-  readonly close = XIcon
+  readonly home:LucideIconData = HouseIcon; 
+  readonly info:LucideIconData = InfoIcon
+  readonly gallrey:LucideIconData = ImagesIcon
+  readonly contact:LucideIconData = PhoneIcon
+  readonly bars:LucideIconData = MenuIcon
+  readonly close:LucideIconData = XIcon
   //todo navbar flag
   isNavOpen: boolean = false;
   //todo catch navbar that is open for toggling
