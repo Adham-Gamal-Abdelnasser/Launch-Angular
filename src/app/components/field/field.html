@@ -1,4 +1,4 @@
-<div class="relative w-full my-5">
-    <input [type]="inputData.type" [id]="inputData.inputId" placeholder="" class="peer w-full px-3 py-3 text-sm text-zinc-900 bg-transparent border border-gray-400 rounded-md focus:outline-none focus:border-blue-600 transition-all duration-300"/>
-    <label [for]="inputData.inputId" class="absolute left-3 top-3 text-gray-500 text-sm pointer-events-none transition-all duration-300 ease-in-out peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:font-bold peer-placeholder-shown:text-gray-500 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:px-1 peer-focus:left-2 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white peer-not-placeholder-shown:px-1 peer-not-placeholder-shown:left-2">{{inputData.labelName}}</label>
+<div class="relative z-10 w-full py-5 text-white">
+  <input [type]="inputData.type" [id]="inputData.inputId" [(ngModel)]="data" (ngModelChange)="onTyping($event)" class="w-full p-3 border border-gray-400 rounded-md focus:outline-none focus:border-blue-600 transition-all duration-300"/>
+  <label #floatingLabel [for]="inputData.inputId" class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 transition-all duration-300">{{ inputData.labelName }}</label>
 </div>
