@@ -1,0 +1,7 @@
+<section class="min-h-screen bg-gray-2 py-20 flex justify-center items-center">
+    <div class="containe grid grid-cols-3 col-span-12 gap-5 p-5">
+        @for(feature of features; track feature.id) {
+            <app-feature [featureData]="feature"></app-feature>
+        }
+    </div>
+</section>
