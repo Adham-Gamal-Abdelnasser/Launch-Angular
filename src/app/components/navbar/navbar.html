@@ -2,7 +2,7 @@
     <h2 class="text-3xl">Launch<span class="text-blue-600">A</span></h2>
     <ul class="hidden md:flex gap-8">
         @for (nav of navLinks; track nav.id) {
-            <li><a class="flex items-center gap-1" href="#"><lucide-angular [img]="nav.icon" class="my-icon"></lucide-angular> {{nav.name}}</a></li>
+            <app-navlink [navigationLink]="nav"></app-navlink>
         }
     </ul>
     @if(isNavOpen){
@@ -11,8 +11,8 @@
         <lucide-angular #barsIcon (click)="toggleNav()" [img]="bars" class="my-icon cursor-pointer md:hidden"></lucide-angular>
     }
 </nav>
-<ul #togglableNavbar [style.height.px]="isNavOpen ? navHeight : '0'" class="mob-navs  flex flex-col overflow-hidden items-center gap-4 bg-gray-2 border-4 border-blue-600 text-zinc-200 font-main md:hidden">
+<ul #togglableNavbar [style.height.px]="isNavOpen ? navHeight : '0'" class="mob-navs py-5 flex flex-col overflow-hidden items-center gap-4 bg-gray-2 border-4 border-blue-600 text-zinc-200 font-main md:hidden">
     @for (nav of navLinks; track nav.id) {
-        <li [class]="{'pt-5': $first , 'pb-5': $last}"><a (click)="closeNav()" class="my-0.5 flex items-center gap-1" href="#"><lucide-angular [img]="nav.icon" class="my-icon"></lucide-angular> {{nav.name}}</a></li>
+        <app-navlink [class]="{'mt-15': $first , 'mb-5': $last}" [navigationLink]="nav"></app-navlink>
     }
 </ul>
