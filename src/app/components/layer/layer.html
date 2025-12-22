@@ -1,0 +1,8 @@
+<div #layerComp class="fixed top-0 bottom-0 start-0 end-0 z-50 bg-neutral-800/85 text-white justify-center items-center" [class.hidden]="!isOpen" [class.flex]="isOpen" (click)="close.emit()">
+    <figure #contentContainer class="grid grid-cols-12 justify-items-center gap-5 p-5 container" (click)="stop($event)">
+        @if(isOpen && feature){
+            <img [src]="feature.source" class="bg-red-500 col-span-12 md:col-span-6  rounded-2xl" alt="feature image">
+            <figcaption class="col-span-12 md:col-span-6 p-5 rounded-2xl font-main flex justify-center items-center text-center">{{ feature.caption }}</figcaption>
+        }
+    </figure>
+</div>

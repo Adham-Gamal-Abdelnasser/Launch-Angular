@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IFeature } from '../../interfaces/ifeature';
 
 @Component({
@@ -9,4 +9,5 @@ import { IFeature } from '../../interfaces/ifeature';
 })
 export class Feature {
   @Input() featureData!: IFeature
+  @Output() featureClick = new EventEmitter<IFeature>();
 }

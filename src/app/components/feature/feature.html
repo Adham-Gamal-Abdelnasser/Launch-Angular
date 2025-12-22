@@ -1,4 +1,4 @@
-<figure class="overflow-hidden relative rounded-4xl h-80">
-    <img [src]="featureData.source" class="w-full" alt="">
+<figure class="overflow-hidden relative rounded-4xl h-80" (click)="featureClick.emit(featureData)">
+    <img [src]="featureData.source" class="w-full" alt="feature image">
     <figcaption class="bg-neutral-800 absolute flex justify-center items-center text-center font-main top-0 bottom-0 text-white opacity-0 hover:opacity-70 transition-all duration-300 cursor-pointer">{{featureData.caption}}</figcaption>
 </figure>

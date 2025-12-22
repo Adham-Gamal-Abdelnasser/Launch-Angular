@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Feature } from "../feature/feature";
 import { IFeature } from '../../interfaces/ifeature';
+import { Layer } from "../layer/layer";
 
 @Component({
   selector: 'app-gallery',
-  imports: [Feature],
+  imports: [Feature, Layer],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css',
 })
@@ -17,4 +18,15 @@ export class Gallery {
     {id: 5, source: "gpt5.png", caption: "Expresses how giving structure and meaning to code improves readability, accessibility, and long-term maintainability—for both humans and machines"},
     {id: 6, source: "gpt6.png", caption: "Represents the awareness that development isn’t just about making things work, but about making them usable, discoverable, and inclusive."},
   ]
+  selectedFeature: IFeature | null = null;
+  isLayerOpen = false;
+  openLayer(feature: IFeature): void {
+    this.selectedFeature = feature;
+    this.isLayerOpen = true;
+  }
+  closeLayer(): void {
+    this.isLayerOpen = false;
+    this.selectedFeature = null;
+  }
+
 }

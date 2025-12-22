@@ -1,7 +1,8 @@
 <section class="min-h-screen bg-gray-2 py-20 flex justify-center items-center">
-    <div class="containe grid grid-cols-3 col-span-12 gap-5 p-5">
+    <div class="container grid grid-cols-12 col-span-12 gap-5 p-5">
         @for(feature of features; track feature.id) {
-            <app-feature [featureData]="feature"></app-feature>
+            <app-feature class="col-span-12 md:col-span-6 lg:col-span-4" [featureData]="feature" (featureClick)="openLayer($event)"></app-feature>
         }
     </div>
 </section>
+<app-layer [feature]="selectedFeature" [isOpen]="isLayerOpen" (close)="closeLayer()"></app-layer>
