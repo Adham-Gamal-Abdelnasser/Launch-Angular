@@ -1,36 +1,25 @@
 .moving-up {
     animation: floatUp 0.4s  ease-in-out ;
     top: 0;
-    left: 0;
-    
 }
 @keyframes floatUp {
     from {
         top: 50%;
-        left: 20px;
-        opacity: 0;
     }
     to {
         top: 0;
-        opacity: 1;
-        left: 0px;
     }
 }
 .moving-down {
     animation: floatDown 0.4s  ease-in-out ;
     top: 50%;
-    left: 20px;
-    opacity: 0;
 }
 @keyframes floatDown {
     from {
         top: 0;
-        left: 0;
-        opacity: 1;
     }
     to {
-        opacity: 0;
         top: 50%;
-        left: 20px
-    }
+    }    
+
 }

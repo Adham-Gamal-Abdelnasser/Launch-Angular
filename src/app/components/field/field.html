@@ -1,4 +1,4 @@
-<div class="relative z-10 w-full py-5 text-white">
-  <input [type]="inputData.type" [id]="inputData.inputId" [(ngModel)]="data" (ngModelChange)="onTyping($event)" class="w-full p-3 border border-gray-400 rounded-md focus:outline-none focus:border-blue-600 transition-all duration-300"/>
-  <label #floatingLabel [for]="inputData.inputId" class="absolute font-main left-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 transition-all duration-300">{{ inputData.labelName }}</label>
+<div class="relative z-10 w-full py-5 ">
+  <input [type]="inputData.type" [id]="inputData.inputId" [(ngModel)]="data" (ngModelChange)="onTyping($event)" class="w-full p-3 border text-white border-gray-400 rounded-md focus:outline-none focus:border-blue-600 transition-all duration-300"/>
+  <label #floatingLabel [for]="inputData.inputId" class="absolute font-main text-gray-500 left-3 top-1/2 -translate-y-1/2 text-sm  transition-all duration-300">{{ inputData.labelName }}</label>
 </div>

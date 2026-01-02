@@ -18,11 +18,11 @@ export class Field {
   onTyping(value: string): void {
     const label = this.floatingLabel.nativeElement;
     if (value && value.length > 0) {
-      label.classList.add('moving-up');
-      label.classList.remove('moving-down');
+      label.classList.add('moving-up','text-blue-600');
+      label.classList.remove('moving-down','text-gray-500');
     } else {
-      label.classList.add('moving-down');
-      label.classList.remove('moving-up');
+      label.classList.add('moving-down','text-gray-500');
+      label.classList.remove('moving-up','text-blue-600');
     }
   }
 
